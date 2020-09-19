@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<observation>
+<report>
+<type_of_report>MET REPORT</type_of_report>
+<icao_id>WIOP</icao_id>
+<valid_date>10 Sep 2020</valid_date>
+<valid_time>03:00  Z</valid_time>
+<issue_time>03:02  Z</issue_time>
+<wind_direction>010 °</wind_direction>
+<wind_speed>14  Kt.</wind_speed>
+<wind_speed_max>  Kt.</wind_speed_max>
+<wind_speed_min>  Kt.</wind_speed_min>
+<wind_dir_vrb_from> °</wind_dir_vrb_from>
+<wind_dir_vrb_to> °</wind_dir_vrb_to>
+<visibility>10 </visibility>
+<satuan_visibility>KM</satuan_visibility>
+<rvr>-</rvr>
+<present_wather>WX. NIHIL</present_wather>
+<cloud_1>FEW 1800</cloud_1>
+<cloud_2></cloud_2>
+<cloud_3></cloud_3>
+<temperature>30 </temperature>
+<dew_point>24 </dew_point>
+<qnh_hpa>1014 </qnh_hpa>
+<qnh_inch>29.97    INCH*</qnh_inch>
+<qfe_hpa>1013 </qfe_hpa>
+<qfe_inch>29.93    INCH*</qfe_inch>
+<supplementary_info>-</supplementary_info>
+<trend_forecast>NOSIG</trend_forecast>
+<observer>Nurmala Novitasari</observer>
+</report>
+</observation>

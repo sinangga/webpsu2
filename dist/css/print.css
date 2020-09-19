@@ -1,0 +1,47 @@
+.content{
+	width:900px;
+	margin:2px auto;
+	overflow: auto;
+	}
+.kop{
+	text-align:center;
+	font-style: bold;
+	height: 100px;
+	width: 700px;
+	padding-top: 3px;
+}
+.logo{
+	float: left;
+	content:url("../img/logo.png");
+	width: 90px;
+	margin: 10px 0px 0px 150px;	
+}
+.nama{
+	float: left;
+	text-align: center;
+	margin-top: 10px;
+}
+.img-line{
+	float:left;
+	width: 780px;
+	height: 5px;
+	margin-left: 60px;
+}
+.judul{
+	float:center;
+	font-size: 18pt;
+	font-style: bold;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+.tabel{
+	border:1px solid #000;
+  	border-collapse:collapse;
+}
+
+.tabel th,
+.tabel td {
+  vertical-align:left;
+  padding:5px 10px;
+  border:1px solid #000;
+}
