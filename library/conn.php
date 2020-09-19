@@ -5,7 +5,7 @@
 	$con=mysqli_connect($host, $username, $password);
 	if(!$con)
 	{
-		die('Tidak Bisa terkoneksi dengan database: '.mysql_error());
+		die('Tidak Bisa terkoneksi dengan database: '.mysqli_error());
 	}
 	mysqli_select_db("stametpangsuma",$con);
 	
