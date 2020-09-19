@@ -2,12 +2,12 @@
 	$host = "localhost";
 	$username = "root";
 	$password = ""; 
-	$con=mysql_connect($host, $username, $password);
+	$con=mysqli_connect($host, $username, $password);
 	if(!$con)
 	{
 		die('Tidak Bisa terkoneksi dengan database: '.mysql_error());
 	}
-	mysql_select_db("stametpangsuma",$con);
+	mysqli_select_db("stametpangsuma",$con);
 	
 
 	//mysql_connect
