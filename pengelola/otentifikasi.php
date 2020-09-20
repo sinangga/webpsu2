@@ -36,10 +36,10 @@ $d = mysqli_fetch_assoc($q);
  
 session_start();
 
-if (mysqli_num_rows($q) == 1) {
+if (mysqli_num_rows($q) > 0) {
     //kalau username dan password sudah terdaftar di database
     //buat session nama username dengan isi nama user yang login
-    $_SESSION['usernamep'] = $usernamep;
+    $_SESSION['usernamep'] = $usernamepp;
     $_SESSION['level'] = $d['level'];
     $_SESSION['idp'] = $d['id_pengguna'];
     header('location:index.php');
