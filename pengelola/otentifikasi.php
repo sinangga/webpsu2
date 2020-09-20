@@ -13,7 +13,7 @@ $usernamep = pg_escape_string($conn, $_POST['username']);
 $passwordp = pg_escape_string($conn, $_POST['password']);
 // $level = mysqli_real_escape_string($level);
 //cek data yang dikirim, apakah kosong atau tidak
-/*
+
 if (empty($usernamep) && empty($passwordp)) {
     //kalau username dan password kosong
     header('location:login.php?error=1');
@@ -28,7 +28,6 @@ if (empty($usernamep) && empty($passwordp)) {
     header('location:login.php?error=3');
 //    break;
 }
-*/
  
 $q = pg_query($conn, "select * from pengguna where username_pengguna= '$usernamep' and password_pengguna='$passwordp'");
 
@@ -36,7 +35,7 @@ $d = pg_fetch_assoc($q);
  
 session_start();
 
-if (pg_num_rows($q) > 0) {
+if (pg_num_rows($q) == 2) {
     //kalau username dan password sudah terdaftar di database
     //buat session nama username dengan isi nama user yang login
     $_SESSION['usernamep'] = $usernamepp;
