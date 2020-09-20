@@ -9,8 +9,8 @@ $passwordp = $_POST['password'];
 // $level = $_POST['level'];
 //untuk mencegah sql injection
 //kita gunakan mysqli_real_escape_string
-$usernamepp = mysqli_real_escape_string($conn, $usernamep);
-$passwordpp = mysqli_real_escape_string($conn, $passwordp);
+$usernamepp = mysqli_real_escape_string($usernamep);
+$passwordpp = mysqli_real_escape_string($passwordp);
 // $level = mysqli_real_escape_string($level);
 //cek data yang dikirim, apakah kosong atau tidak
 /*
@@ -30,7 +30,7 @@ if (empty($usernamep) && empty($passwordp)) {
 }
 */
  
-$q = mysqli_query($conn, "select * from pengguna where username_pengguna= '$usernamepp' and password_pengguna='$passwordpp'");
+$q = mysqli_query("select * from pengguna where username_pengguna= '$usernamepp' and password_pengguna='$passwordpp'");
 
 $d = mysqli_fetch_assoc($q);
  
