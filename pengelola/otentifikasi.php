@@ -30,7 +30,7 @@ if (empty($usernamep) && empty($passwordp)) {
 }
 */
  
-$q = mysqli_query("select * from pengguna where username_pengguna= '$usernamepp' and password_pengguna='$passwordpp'");
+$q = mysqli_query($con, "select * from pengguna where username_pengguna= '$usernamepp' and password_pengguna='$passwordpp'");
 
 $d = mysqli_fetch_assoc($q);
  
