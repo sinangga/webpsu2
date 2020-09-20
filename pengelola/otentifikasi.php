@@ -13,6 +13,7 @@ $usernamepp = mysqli_real_escape_string($usernamep);
 $passwordpp = mysqli_real_escape_string($passwordp);
 // $level = mysqli_real_escape_string($level);
 //cek data yang dikirim, apakah kosong atau tidak
+/*
 if (empty($usernamep) && empty($passwordp)) {
     //kalau username dan password kosong
     header('location:login.php?error=1');
@@ -27,6 +28,7 @@ if (empty($usernamep) && empty($passwordp)) {
     header('location:login.php?error=3');
 //    break;
 }
+*/
  
 $q = mysqli_query("select * from pengguna where username_pengguna= '$usernamepp' and password_pengguna='$passwordpp'");
 
