@@ -16,16 +16,16 @@ $passwordp = mysqli_real_escape_string($passwordp);
 if (empty($usernamep) && empty($passwordp)) {
     //kalau username dan password kosong
     header('location:login.php?error=1');
-//    break;
+    break;
 } else if (empty($usernamep)) {
     //kalau username saja yang kosong
     header('location:login.php?error=2');
-//    break;
+    break;
 } else if (empty($passwordp)) {
     //kalau password saja yang kosong
     //redirect ke halaman index
     header('location:login.php?error=3');
-//    break;
+    break;
 }
  
 $q = mysqli_query("select * from pengguna where username_pengguna= '$usernamep' and password_pengguna='$passwordp'");
