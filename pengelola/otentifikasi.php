@@ -4,13 +4,13 @@ include "../library/conn.php";
     unset($_SESSION['idp']);
     unset($_SESSION['level']);
 //tangkap data dari form login
-$usernamep = $_POST['username'];
-$passwordp = $_POST['password'];
+//$usernamep = $_POST['username'];
+//$passwordp = $_POST['password'];
 // $level = $_POST['level'];
 //untuk mencegah sql injection
 //kita gunakan mysqli_real_escape_string
-$usernamep = mysqli_real_escape_string($conn, $usernamep);
-$passwordp = mysqli_real_escape_string($conn, $passwordp);
+$usernamep = mysqli_real_escape_string($conn, $_POST['username']);
+$passwordp = mysqli_real_escape_string($conn, $_POST['password']);
 // $level = mysqli_real_escape_string($level);
 //cek data yang dikirim, apakah kosong atau tidak
 /*
