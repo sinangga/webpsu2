@@ -9,8 +9,8 @@ $passwordp = $_POST['password'];
 // $level = $_POST['level'];
 //untuk mencegah sql injection
 //kita gunakan mysqli_real_escape_string
-$usernamep = mysqli_real_escape_string($usernamep, $usernamep);
-$passwordp = mysqli_real_escape_string($passwordp, $passwordp);
+$usernamep = mysqli_real_escape_string($conn, $usernamep);
+$passwordp = mysqli_real_escape_string($conn, $passwordp);
 // $level = mysqli_real_escape_string($level);
 //cek data yang dikirim, apakah kosong atau tidak
 /*
