@@ -8,10 +8,10 @@ $usernamep = $_POST['username'];
 $passwordp = $_POST['password'];
 // $level = $_POST['level'];
 //untuk mencegah sql injection
-//kita gunakan mysql_real_escape_string
-$usernamep = mysql_real_escape_string($usernamep);
-$passwordp = mysql_real_escape_string($passwordp);
-// $level = mysql_real_escape_string($level);
+//kita gunakan mysqli_real_escape_string
+$usernamep = mysqli_real_escape_string($usernamep);
+$passwordp = mysqli_real_escape_string($passwordp);
+// $level = mysqli_real_escape_string($level);
 //cek data yang dikirim, apakah kosong atau tidak
 if (empty($usernamep) && empty($passwordp)) {
     //kalau username dan password kosong
@@ -28,13 +28,13 @@ if (empty($usernamep) && empty($passwordp)) {
 //    break;
 }
  
-$q = mysql_query("select * from pengguna where username_pengguna= '$usernamep' and password_pengguna='$passwordp'");
+$q = mysqli_query("select * from pengguna where username_pengguna= '$usernamep' and password_pengguna='$passwordp'");
 
-$d = mysql_fetch_array($q);
+$d = mysqli_fetch_array($q);
  
 session_start();
 
-if (mysql_num_rows($q) == 1) {
+if (mysqli_num_rows($q) == 1) {
     //kalau username dan password sudah terdaftar di database
     //buat session nama username dengan isi nama user yang login
     $_SESSION['usernamep'] = $usernamep;
