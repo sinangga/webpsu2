@@ -3,6 +3,7 @@
    
   if(isset($_GET['hal'])=='delete'){
       $sql = "DELETE FROM pracu_harian WHERE id_pracuharian = '$_GET[id]'";
+	  $id=id;
 
     if (pg_query($sql))
       {echo "<script>alert('Data berhasil dihapus')

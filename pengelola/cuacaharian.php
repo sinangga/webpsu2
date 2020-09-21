@@ -73,12 +73,13 @@ include "../library/conn.php";
             $tgll=substr($tglupload, 8, 2);
             $namagbr = $kar .$tahun .$bulan .$tgll;
 			$bultan = $bulan .$tgll;
-			$gid= "SELECT FROM pracu_harian WHERE id_pracuharian = '$_GET[id]'";
-			pg_query($gid);
-			$maxid = $gid + 1 ;
+
 
 
   include "../library/config.php";
+  include "cuacaharian-proses.php";
+
+			$maxid = $id + 1 ;
 
   if(isset($_POST['upload'])){
         $allowed_ext  = array('png', 'jpg', 'jpeg');
@@ -90,7 +91,7 @@ include "../library/conn.php";
         $char = "pengelola/pracuharian/harian-";
 
         $namafile = $char .$tahun .$bulan .$tgll;
-        $lokasifile = $gid.'.'.$file_ext;
+        $lokasifile = $maxid.'.'.$file_ext;
 
         if(in_array($file_ext, $allowed_ext) === true){
           if($file_size < 1044070){
@@ -100,7 +101,7 @@ include "../library/conn.php";
             move_uploaded_file($file_tmp, $lokasi2);
             rename($lokasi2,$lokasi);
              $in = pg_query("INSERT INTO pracu_harian (namafile, gbr_pracuharian)
-	  VALUES ('$gid', '$lokasifile')");
+	  VALUES ('$maxid', '$lokasifile')");
             if($in){
               echo "<script>alert('File berhasil diupload!')
                 window.location= 'data.php?page=cuacaharian';</script>";
