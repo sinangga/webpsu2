@@ -95,8 +95,8 @@ include "../library/conn.php";
              //move_uploaded_file($file_tmp, $lokasi);
             move_uploaded_file($file_tmp, $lokasi2);
             rename($lokasi2,$lokasi);
-             $in = pg_query("INSERT INTO pracu_harian (id_pracuharian, namafile, gbr_pracuharian) 
-	  VALUES ('$id', '$namagbr', '$lokasifile')");
+             $in = pg_query("INSERT INTO pracu_harian (namafile, gbr_pracuharian)
+	  VALUES ('$namagbr', '$lokasifile')");
             if($in){
               echo "<script>alert('File berhasil diupload!')
                 window.location= 'data.php?page=cuacaharian';</script>";
