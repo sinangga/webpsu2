@@ -1,4 +1,5 @@
 <?php include "../library/fungsi-tgl-indo.php";
+include "../library/conn.php";
 ?>
     <section class="content-header">
       <h1>
@@ -94,8 +95,13 @@
              //move_uploaded_file($file_tmp, $lokasi);
             move_uploaded_file($file_tmp, $lokasi2);
           rename($lokasi2,$lokasi);
+<<<<<<< HEAD
             $in = pg_query("INSERT INTO pracu_harian (id_pracuharian, namafile, gbr_pracuharian) 
 			VALUES ('', '$namagbr', '$lokasifile')");
+=======
+            $in = pg_query($conn, "INSERT INTO pracu_harian (id_pracuharian, namafile, gbr_pracuharian) 
+		VALUES (NULL, '$namagbr', '$lokasifile')");
+>>>>>>> 060a2aa8d6e6c6a3bfa9bd8f2f3b36e6a34d72cc
             if($in){
               echo "<script>alert('File berhasil diupload!')
                 window.location= 'data.php?page=cuacaharian';</script>";
