@@ -93,8 +93,8 @@
             move_uploaded_file($file_tmp, $lokasi2);
             // $asal='data_kirim/'.$lokasi2;
             rename($lokasi2,$lokasi);
-           $in = pg_query("INSERT INTO potensi_karhutla (id_potensikarhutla, namafile, gbr_potensikarhutla)
-      VALUES (NULL, '$namagbr', '$lokasifile')");
+           $in = pg_query("INSERT INTO potensi_karhutla (namafile, gbr_potensikarhutla)
+      VALUES ('$namagbr', '$lokasifile')");
             if($in){
               echo "<script>alert('File berhasil diupload!')
                 window.location= 'data.php?page=potensikarhutla';</script>";

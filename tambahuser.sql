@@ -1,0 +1,1 @@
+insert into pengguna (id_pengguna, nama_pengguna, username_pengguna, password_pengguna) values (3, 'Sinangga', 'sin', 27);

@@ -38,120 +38,120 @@ SET default_with_oids = false;
 --
 
 CREATE TABLE public.buletin (
-    id_buletin integer,
+    id_buletin serial,
     bln_buletin character varying(15) DEFAULT NULL::character varying,
     gbr_buletin character varying(47) DEFAULT NULL::character varying,
     file_buletin character varying(30) DEFAULT NULL::character varying
 );
 
 
-ALTER TABLE public.buletin OWNER TO  ;
+ALTER TABLE public.buletin ;
 
 --
 -- Name: kritik_saran; Type: TABLE; Schema: public; Owner: 
 --
 
 CREATE TABLE public.kritik_saran (
-    id_kritiksaran integer,
+    id_kritiksaran serial,
     nama_kritiksaran character varying(4) DEFAULT NULL::character varying,
     email_kritiksaran character varying(16) DEFAULT NULL::character varying,
     pesan_kritiksaran character varying(4) DEFAULT NULL::character varying
 );
 
 
-ALTER TABLE public.kritik_saran OWNER TO  ;
+ALTER TABLE public.kritik_saran ;
 
 --
 -- Name: pengguna; Type: TABLE; Schema: public; Owner:  
 --
 
 CREATE TABLE public.pengguna (
-    id_pengguna integer,
+    id_pengguna serial,
     nama_pengguna character varying(15) DEFAULT NULL::character varying,
     username_pengguna character varying(6) DEFAULT NULL::character varying,
     password_pengguna integer
 );
 
 
-ALTER TABLE public.pengguna OWNER TO  ;
+ALTER TABLE public.pengguna ;
 
 --
 -- Name: potensi_karhutla; Type: TABLE; Schema: public; Owner:  
 --
 
 CREATE TABLE public.potensi_karhutla (
-    id_potensikarhutla integer,
+    id_potensikarhutla serial,
     namafile character varying(17) DEFAULT NULL::character varying,
     gbr_potensikarhutla character varying(39) DEFAULT NULL::character varying
 );
 
 
-ALTER TABLE public.potensi_karhutla OWNER TO  ;
+ALTER TABLE public.potensi_karhutla ;
 
 --
 -- Name: pracu_3harian; Type: TABLE; Schema: public; Owner:  
 --
 
 CREATE TABLE public.pracu_3harian (
-    id_pracu3harian integer,
+    id_pracu3harian serial,
     namafile character varying(16) DEFAULT NULL::character varying,
     gbr_pracu3harian character varying(41) DEFAULT NULL::character varying
 );
 
 
-ALTER TABLE public.pracu_3harian OWNER TO  ;
+ALTER TABLE public.pracu_3harian ;
 
 --
 -- Name: pracu_harian; Type: TABLE; Schema: public; Owner:  
 --
 
 CREATE TABLE public.pracu_harian (
-    id_pracuharian integer,
+    id_pracuharian serial,
     namafile character varying(15) DEFAULT NULL::character varying,
     gbr_pracuharian character varying(41) DEFAULT NULL::character varying
 );
 
 
-ALTER TABLE public.pracu_harian OWNER TO  ;
+ALTER TABLE public.pracu_harian ;
 
 --
 -- Name: pracu_kalbar; Type: TABLE; Schema: public; Owner:  
 --
 
 CREATE TABLE public.pracu_kalbar (
-    id_pracukalbar integer,
+    id_pracukalbar serial,
     namafile character varying(21) DEFAULT NULL::character varying,
     gbr_pracukalbar character varying(47) DEFAULT NULL::character varying
 );
 
 
-ALTER TABLE public.pracu_kalbar OWNER TO  ;
+ALTER TABLE public.pracu_kalbar ;
 
 --
 -- Name: pracu_mingguan; Type: TABLE; Schema: public; Owner:  
 --
 
 CREATE TABLE public.pracu_mingguan (
-    id_pracumingguan integer,
+    id_pracumingguan serial,
     namafile character varying(17) DEFAULT NULL::character varying,
     gbr_pracumingguan character varying(45) DEFAULT NULL::character varying
 );
 
 
-ALTER TABLE public.pracu_mingguan OWNER TO  ;
+ALTER TABLE public.pracu_mingguan ;
 
 --
 -- Name: sebaran_hotspot; Type: TABLE; Schema: public; Owner:  
 --
 
 CREATE TABLE public.sebaran_hotspot (
-    id_sebaranhotspot integer,
+    id_sebaranhotspot serial,
     namafile character varying(16) DEFAULT NULL::character varying,
     gbr_sebaranhotspot character varying(38) DEFAULT NULL::character varying
 );
 
 
-ALTER TABLE public.sebaran_hotspot OWNER TO  ;
+ALTER TABLE public.sebaran_hotspot ;
 
 --
 -- Data for Name: buletin; Type: TABLE DATA; Schema: public; Owner:  
@@ -183,8 +183,7 @@ COPY public.kritik_saran (id_kritiksaran, nama_kritiksaran, email_kritiksaran, p
 --
 
 COPY public.pengguna (id_pengguna, nama_pengguna, username_pengguna, password_pengguna) FROM stdin;
-1	Pebriyanti 	pebyan 70298
-2	Sinangga yudi 0
+
 \.
 
 
