@@ -34,127 +34,127 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- Name: buletin; Type: TABLE; Schema: public; Owner: rebasedata
+-- Name: buletin; Type: TABLE; Schema: public; Owner: 
 --
 
 CREATE TABLE public.buletin (
-    id_buletin smallint,
+    id_buletin integer,
     bln_buletin character varying(15) DEFAULT NULL::character varying,
     gbr_buletin character varying(47) DEFAULT NULL::character varying,
     file_buletin character varying(30) DEFAULT NULL::character varying
 );
 
 
-ALTER TABLE public.buletin OWNER TO rebasedata;
+ALTER TABLE public.buletin OWNER TO  ;
 
 --
--- Name: kritik_saran; Type: TABLE; Schema: public; Owner: rebasedata
+-- Name: kritik_saran; Type: TABLE; Schema: public; Owner: 
 --
 
 CREATE TABLE public.kritik_saran (
-    id_kritiksaran smallint,
+    id_kritiksaran integer,
     nama_kritiksaran character varying(4) DEFAULT NULL::character varying,
     email_kritiksaran character varying(16) DEFAULT NULL::character varying,
     pesan_kritiksaran character varying(4) DEFAULT NULL::character varying
 );
 
 
-ALTER TABLE public.kritik_saran OWNER TO rebasedata;
+ALTER TABLE public.kritik_saran OWNER TO  ;
 
 --
--- Name: pengguna; Type: TABLE; Schema: public; Owner: rebasedata
+-- Name: pengguna; Type: TABLE; Schema: public; Owner:  
 --
 
 CREATE TABLE public.pengguna (
-    id_pengguna smallint,
+    id_pengguna integer,
     nama_pengguna character varying(15) DEFAULT NULL::character varying,
     username_pengguna character varying(6) DEFAULT NULL::character varying,
     password_pengguna integer
 );
 
 
-ALTER TABLE public.pengguna OWNER TO rebasedata;
+ALTER TABLE public.pengguna OWNER TO  ;
 
 --
--- Name: potensi_karhutla; Type: TABLE; Schema: public; Owner: rebasedata
+-- Name: potensi_karhutla; Type: TABLE; Schema: public; Owner:  
 --
 
 CREATE TABLE public.potensi_karhutla (
-    id_potensikarhutla smallint,
+    id_potensikarhutla integer,
     namafile character varying(17) DEFAULT NULL::character varying,
     gbr_potensikarhutla character varying(39) DEFAULT NULL::character varying
 );
 
 
-ALTER TABLE public.potensi_karhutla OWNER TO rebasedata;
+ALTER TABLE public.potensi_karhutla OWNER TO  ;
 
 --
--- Name: pracu_3harian; Type: TABLE; Schema: public; Owner: rebasedata
+-- Name: pracu_3harian; Type: TABLE; Schema: public; Owner:  
 --
 
 CREATE TABLE public.pracu_3harian (
-    id_pracu3harian smallint,
+    id_pracu3harian integer,
     namafile character varying(16) DEFAULT NULL::character varying,
     gbr_pracu3harian character varying(41) DEFAULT NULL::character varying
 );
 
 
-ALTER TABLE public.pracu_3harian OWNER TO rebasedata;
+ALTER TABLE public.pracu_3harian OWNER TO  ;
 
 --
--- Name: pracu_harian; Type: TABLE; Schema: public; Owner: rebasedata
+-- Name: pracu_harian; Type: TABLE; Schema: public; Owner:  
 --
 
 CREATE TABLE public.pracu_harian (
-    id_pracuharian smallint,
+    id_pracuharian integer,
     namafile character varying(15) DEFAULT NULL::character varying,
     gbr_pracuharian character varying(41) DEFAULT NULL::character varying
 );
 
 
-ALTER TABLE public.pracu_harian OWNER TO rebasedata;
+ALTER TABLE public.pracu_harian OWNER TO  ;
 
 --
--- Name: pracu_kalbar; Type: TABLE; Schema: public; Owner: rebasedata
+-- Name: pracu_kalbar; Type: TABLE; Schema: public; Owner:  
 --
 
 CREATE TABLE public.pracu_kalbar (
-    id_pracukalbar smallint,
+    id_pracukalbar integer,
     namafile character varying(21) DEFAULT NULL::character varying,
     gbr_pracukalbar character varying(47) DEFAULT NULL::character varying
 );
 
 
-ALTER TABLE public.pracu_kalbar OWNER TO rebasedata;
+ALTER TABLE public.pracu_kalbar OWNER TO  ;
 
 --
--- Name: pracu_mingguan; Type: TABLE; Schema: public; Owner: rebasedata
+-- Name: pracu_mingguan; Type: TABLE; Schema: public; Owner:  
 --
 
 CREATE TABLE public.pracu_mingguan (
-    id_pracumingguan smallint,
+    id_pracumingguan integer,
     namafile character varying(17) DEFAULT NULL::character varying,
     gbr_pracumingguan character varying(45) DEFAULT NULL::character varying
 );
 
 
-ALTER TABLE public.pracu_mingguan OWNER TO rebasedata;
+ALTER TABLE public.pracu_mingguan OWNER TO  ;
 
 --
--- Name: sebaran_hotspot; Type: TABLE; Schema: public; Owner: rebasedata
+-- Name: sebaran_hotspot; Type: TABLE; Schema: public; Owner:  
 --
 
 CREATE TABLE public.sebaran_hotspot (
-    id_sebaranhotspot smallint,
+    id_sebaranhotspot integer,
     namafile character varying(16) DEFAULT NULL::character varying,
     gbr_sebaranhotspot character varying(38) DEFAULT NULL::character varying
 );
 
 
-ALTER TABLE public.sebaran_hotspot OWNER TO rebasedata;
+ALTER TABLE public.sebaran_hotspot OWNER TO  ;
 
 --
--- Data for Name: buletin; Type: TABLE DATA; Schema: public; Owner: rebasedata
+-- Data for Name: buletin; Type: TABLE DATA; Schema: public; Owner:  
 --
 
 COPY public.buletin (id_buletin, bln_buletin, gbr_buletin, file_buletin) FROM stdin;
@@ -169,7 +169,7 @@ COPY public.buletin (id_buletin, bln_buletin, gbr_buletin, file_buletin) FROM st
 
 
 --
--- Data for Name: ritik_saran; Type: TABLE DATA; Schema: public; Owner: rebasedata
+-- Data for Name: ritik_saran; Type: TABLE DATA; Schema: public; Owner:  
 --
 
 COPY public.kritik_saran (id_kritiksaran, nama_kritiksaran, email_kritiksaran, pesan_kritiksaran) FROM stdin;
@@ -179,17 +179,17 @@ COPY public.kritik_saran (id_kritiksaran, nama_kritiksaran, email_kritiksaran, p
 
 
 --
--- Data for Name: pengguna; Type: TABLE DATA; Schema: public; Owner: rebasedata
+-- Data for Name: pengguna; Type: TABLE DATA; Schema: public; Owner:  
 --
 
 COPY public.pengguna (id_pengguna, nama_pengguna, username_pengguna, password_pengguna) FROM stdin;
-1	Pebriyanti 	pebyan	70298
-2	Muhammad Suyudi	yudi66	11111
+1	Pebriyanti 	pebyan 70298
+2	Sinangga yudi 0
 \.
 
 
 --
--- Data for Name: potensi_karhutla; Type: TABLE DATA; Schema: public; Owner: rebasedata
+-- Data for Name: potensi_karhutla; Type: TABLE DATA; Schema: public; Owner:  
 --
 
 COPY public.potensi_karhutla (id_potensikarhutla, namafile, gbr_potensikarhutla) FROM stdin;
@@ -199,7 +199,7 @@ COPY public.potensi_karhutla (id_potensikarhutla, namafile, gbr_potensikarhutla)
 
 
 --
--- Data for Name: pracu_3harian; Type: TABLE DATA; Schema: public; Owner: rebasedata
+-- Data for Name: pracu_3harian; Type: TABLE DATA; Schema: public; Owner:  
 --
 
 COPY public.pracu_3harian (id_pracu3harian, namafile, gbr_pracu3harian) FROM stdin;
@@ -208,7 +208,7 @@ COPY public.pracu_3harian (id_pracu3harian, namafile, gbr_pracu3harian) FROM std
 
 
 --
--- Data for Name: pracu_harian; Type: TABLE DATA; Schema: public; Owner: rebasedata
+-- Data for Name: pracu_harian; Type: TABLE DATA; Schema: public; Owner:  
 --
 
 COPY public.pracu_harian (id_pracuharian, namafile, gbr_pracuharian) FROM stdin;
@@ -217,7 +217,7 @@ COPY public.pracu_harian (id_pracuharian, namafile, gbr_pracuharian) FROM stdin;
 
 
 --
--- Data for Name: pracu_kalbar; Type: TABLE DATA; Schema: public; Owner: rebasedata
+-- Data for Name: pracu_kalbar; Type: TABLE DATA; Schema: public; Owner:  
 --
 
 COPY public.pracu_kalbar (id_pracukalbar, namafile, gbr_pracukalbar) FROM stdin;
@@ -228,7 +228,7 @@ COPY public.pracu_kalbar (id_pracukalbar, namafile, gbr_pracukalbar) FROM stdin;
 
 
 --
--- Data for Name: pracu_mingguan; Type: TABLE DATA; Schema: public; Owner: rebasedata
+-- Data for Name: pracu_mingguan; Type: TABLE DATA; Schema: public; Owner:  
 --
 
 COPY public.pracu_mingguan (id_pracumingguan, namafile, gbr_pracumingguan) FROM stdin;
@@ -238,7 +238,7 @@ COPY public.pracu_mingguan (id_pracumingguan, namafile, gbr_pracumingguan) FROM 
 
 
 --
--- Data for Name: sebaran_hotspot; Type: TABLE DATA; Schema: public; Owner: rebasedata
+-- Data for Name: sebaran_hotspot; Type: TABLE DATA; Schema: public; Owner:  
 --
 
 COPY public.sebaran_hotspot (id_sebaranhotspot, namafile, gbr_sebaranhotspot) FROM stdin;
