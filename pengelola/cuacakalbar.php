@@ -24,9 +24,9 @@
                 <tbody>
                 <?php 
                   $i = 1;
-                    $query = mysql_query("SELECT * FROM pracu_kapuashulu");
+                    $query = pg_query("SELECT * FROM pracu_kapuashulu");
                       // tampilkan data permukaan selama masih ada
-                      while($data = mysql_fetch_array($query)) {
+                      while($data = pg_fetch_array($query)) {
                       echo("
                       <tr class='odd gradeA'>
                       <td align='center'>$i</td>
@@ -98,7 +98,7 @@
             move_uploaded_file($file_tmp, $lokasi2);
             // $asal='data_kirim/'.$lokasi2;
             rename($lokasi2,$lokasi);
-            $in = mysql_query("UPDATE data_masuk SET keterangan = '$keterangan', data_kirim = '$datakirim', tgl_kirim = '$tglkirim', catatan = '$catatan'  WHERE id_masuk = '$id_masuk'");
+            $in = pg_query("UPDATE data_masuk SET keterangan = '$keterangan', data_kirim = '$datakirim', tgl_kirim = '$tglkirim', catatan = '$catatan'  WHERE id_masuk = '$id_masuk'");
             if($in){
               echo "<script>alert('File berhasil diupload!')
                 window.location= 'data.php?page=cuacakalbar';</script>";

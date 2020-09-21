@@ -24,9 +24,9 @@
                 <tbody>
                 <?php 
                   $i = 1;
-                    $query = mysql_query("SELECT * FROM pracu_harian");
+                    $query = pg_query("SELECT * FROM pracu_harian");
                       // tampilkan data permukaan selama masih ada
-                      while($data = mysql_fetch_array($query)) {
+                      while($data = pg_fetch_array($query)) {
                      
                       echo("
                       <tr class='odd gradeA'>
@@ -94,7 +94,7 @@
              //move_uploaded_file($file_tmp, $lokasi);
             move_uploaded_file($file_tmp, $lokasi2);
           rename($lokasi2,$lokasi);
-            $in = mysql_query("INSERT INTO pracu_harian (id_pracuharian, namafile, gbr_pracuharian)
+            $in = pg_query("INSERT INTO pracu_harian (id_pracuharian, namafile, gbr_pracuharian)
       VALUES (NULL, '$namagbr', '$lokasifile')");
             if($in){
               echo "<script>alert('File berhasil diupload!')
