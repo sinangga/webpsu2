@@ -75,7 +75,6 @@ include "../library/conn.php";
 			$bultan = $bulan .$tgll;
 
 
-
   include "../library/config.php";
 
   if(isset($_POST['upload'])){
@@ -141,5 +140,3 @@ include "../library/conn.php";
           <!-- /.modal-dialog -->
         </div>
         <!-- /.modal -->      
-
-
