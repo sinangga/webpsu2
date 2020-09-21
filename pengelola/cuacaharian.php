@@ -88,7 +88,7 @@ include "../library/conn.php";
         $char = "pengelola/pracuharian/harian-";
 
         $namafile = $char .$tahun .$bulan .$tgll;
-        $lokasifile = $namagbr.'.'.$file_ext;
+        $lokasifile = $namafile.'.'.$file_ext;
 
         if(in_array($file_ext, $allowed_ext) === true){
           if($file_size < 1044070){
