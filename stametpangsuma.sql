@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 17 Sep 2020 pada 19.16
+-- Generation Time: 21 Sep 2020 pada 05.42
 -- Versi Server: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -29,16 +29,22 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `buletin` (
 `id_buletin` int(10) NOT NULL,
   `bln_buletin` varchar(25) NOT NULL,
-  `gbr_buletin` varchar(255) NOT NULL,
-  `file_buletin` varchar(255) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+  `gbr_buletin` varchar(50) NOT NULL,
+  `file_buletin` varchar(50) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `buletin`
 --
 
 INSERT INTO `buletin` (`id_buletin`, `bln_buletin`, `gbr_buletin`, `file_buletin`) VALUES
-(1, 'Agustus 2020', 'img/buletin/8.jpeg', 'bulet/Pangsuma_agustus2020.pdf');
+(1, 'Agustus 2020', 'img/buletin/8.jpeg', 'bulet/Pangsuma_agustus2020.pdf'),
+(2, ' September-2020', 'pengelola/coverbltn/buletin- September-2020.jpg', ''),
+(3, ' Agustus-2020', 'pengelola/coverbltn/buletin- Agustus-2020.png', ''),
+(4, ' Juli 2020', 'pengelola/coverbltn/buletin- Juli 2020.jpg', 'NULL'),
+(5, ' JUNI-2020', 'pengelola/coverbltn/buletin- JUNI-2020.jpg', 'NULL'),
+(6, ' September-2020', 'pengelola/coverbltn/buletin- September-2020.png', 'NULL'),
+(7, 'tes', 'pengelola/coverbltn/buletin-tes.png', 'NULL');
 
 -- --------------------------------------------------------
 
@@ -51,14 +57,15 @@ CREATE TABLE IF NOT EXISTS `kritik_saran` (
   `nama_kritiksaran` varchar(50) NOT NULL,
   `email_kritiksaran` varchar(50) NOT NULL,
   `pesan_kritiksaran` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `kritik_saran`
 --
 
 INSERT INTO `kritik_saran` (`id_kritiksaran`, `nama_kritiksaran`, `email_kritiksaran`, `pesan_kritiksaran`) VALUES
-(1, 'dewi', 'dewi88@gmail.com', 'okee');
+(1, 'dewi', 'dewi88@gmail.com', 'okee'),
+(2, 'yaya', 'yaya@gmail.com', 't');
 
 -- --------------------------------------------------------
 
@@ -89,16 +96,17 @@ INSERT INTO `pengguna` (`id_pengguna`, `nama_pengguna`, `username_pengguna`, `pa
 
 CREATE TABLE IF NOT EXISTS `potensi_karhutla` (
 `id_potensikarhutla` int(10) NOT NULL,
-  `tgl_potensikarhutla` date NOT NULL,
+  `namafile` varchar(25) NOT NULL,
   `gbr_potensikarhutla` varchar(255) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `potensi_karhutla`
 --
 
-INSERT INTO `potensi_karhutla` (`id_potensikarhutla`, `tgl_potensikarhutla`, `gbr_potensikarhutla`) VALUES
-(1, '2020-09-16', 'img/hs/potensikarhutla_16sept.jpeg');
+INSERT INTO `potensi_karhutla` (`id_potensikarhutla`, `namafile`, `gbr_potensikarhutla`) VALUES
+(1, '2020-09-16', 'img/hs/potensikarhutla_16sept.jpeg'),
+(8, 'karhutla-20200920', 'pengelola/potensi/karhutla-20200920.jpg');
 
 -- --------------------------------------------------------
 
@@ -108,16 +116,16 @@ INSERT INTO `potensi_karhutla` (`id_potensikarhutla`, `tgl_potensikarhutla`, `gb
 
 CREATE TABLE IF NOT EXISTS `pracu_3harian` (
 `id_pracu3harian` int(10) NOT NULL,
-  `tgl_pracu3harian` date NOT NULL,
+  `namafile` varchar(25) NOT NULL,
   `gbr_pracu3harian` varchar(255) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `pracu_3harian`
 --
 
-INSERT INTO `pracu_3harian` (`id_pracu3harian`, `tgl_pracu3harian`, `gbr_pracu3harian`) VALUES
-(1, '2020-09-15', 'img/pracu/pracu_3harian15sept.jpeg');
+INSERT INTO `pracu_3harian` (`id_pracu3harian`, `namafile`, `gbr_pracu3harian`) VALUES
+(2, '3harian-20200919', 'pengelola/pracu3hari/3harian-20200919.jpg');
 
 -- --------------------------------------------------------
 
@@ -128,41 +136,36 @@ INSERT INTO `pracu_3harian` (`id_pracu3harian`, `tgl_pracu3harian`, `gbr_pracu3h
 CREATE TABLE IF NOT EXISTS `pracu_harian` (
 `id_pracuharian` int(10) NOT NULL,
   `namafile` varchar(50) NOT NULL,
-  `tgl_pracuharian` date NOT NULL,
-  `gbr_pracuharian` varchar(255) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
+  `gbr_pracuharian` varchar(50) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `pracu_harian`
 --
 
-INSERT INTO `pracu_harian` (`id_pracuharian`, `namafile`, `tgl_pracuharian`, `gbr_pracuharian`) VALUES
-(1, 'pracu16sept', '2020-09-16', 'img/pracu/pracu16sept.jpeg'),
-(4, 'Cuaca Harian 17-09-2020', '2020-09-17', 'harian-20200917-.jpg'),
-(5, 'Cuaca Harian 17-09-2020', '2020-09-17', 'harian-20200917-.jpg'),
-(10, 'Cuaca Harian 17-09-2020', '2020-09-17', 'pracu/harian-20200917.jpg'),
-(11, 'Cuaca Harian 18-09-2020', '2020-09-18', 'pracu/harian-20200918.jpg'),
-(12, 'Cuaca Harian 18-09-2020', '2020-09-18', 'pracu/harian-20200918.png');
+INSERT INTO `pracu_harian` (`id_pracuharian`, `namafile`, `gbr_pracuharian`) VALUES
+(1, 'harian-20200919', 'pengelola/pracuharian/harian-20200919.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pracu_kapuashulu`
+-- Struktur dari tabel `pracu_kalbar`
 --
 
-CREATE TABLE IF NOT EXISTS `pracu_kapuashulu` (
-`id_pracukh` int(25) NOT NULL,
-  `tgl_pracukh` date NOT NULL,
-  `gbr_pracukh` varchar(50) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+CREATE TABLE IF NOT EXISTS `pracu_kalbar` (
+`id_pracukalbar` int(25) NOT NULL,
+  `namafile` varchar(30) NOT NULL,
+  `gbr_pracukalbar` varchar(50) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `pracu_kapuashulu`
+-- Dumping data untuk tabel `pracu_kalbar`
 --
 
-INSERT INTO `pracu_kapuashulu` (`id_pracukh`, `tgl_pracukh`, `gbr_pracukh`) VALUES
+INSERT INTO `pracu_kalbar` (`id_pracukalbar`, `namafile`, `gbr_pracukalbar`) VALUES
 (1, '2020-09-16', 'img/pracu/pracu16sept.jpeg'),
-(2, '2020-09-17', 'img/pracu/pracu17sept.jpeg');
+(2, '2020-09-17', 'img/pracu/pracu17sept.jpeg'),
+(6, 'hariankalbar-20200919', 'pengelola/pracukalbar/hariankalbar-20200919.jpg');
 
 -- --------------------------------------------------------
 
@@ -172,16 +175,17 @@ INSERT INTO `pracu_kapuashulu` (`id_pracukh`, `tgl_pracukh`, `gbr_pracukh`) VALU
 
 CREATE TABLE IF NOT EXISTS `pracu_mingguan` (
 `id_pracumingguan` int(10) NOT NULL,
-  `tgl_pracumingguan` date NOT NULL,
+  `namafile` varchar(25) NOT NULL,
   `gbr_pracumingguan` varchar(255) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `pracu_mingguan`
 --
 
-INSERT INTO `pracu_mingguan` (`id_pracumingguan`, `tgl_pracumingguan`, `gbr_pracumingguan`) VALUES
-(1, '2020-09-13', 'img/pracu/pracumingguan_13sept.jpeg');
+INSERT INTO `pracu_mingguan` (`id_pracumingguan`, `namafile`, `gbr_pracumingguan`) VALUES
+(1, '2020-09-13', 'img/pracu/pracumingguan_13sept.jpeg'),
+(2, 'mingguan-20200920', 'pengelola/pracumingguan/mingguan-20200920.jpg');
 
 -- --------------------------------------------------------
 
@@ -191,16 +195,17 @@ INSERT INTO `pracu_mingguan` (`id_pracumingguan`, `tgl_pracumingguan`, `gbr_prac
 
 CREATE TABLE IF NOT EXISTS `sebaran_hotspot` (
 `id_sebaranhotspot` int(10) NOT NULL,
-  `tgl_sebaranhotspot` date NOT NULL,
+  `namafile` varchar(25) NOT NULL,
   `gbr_sebaranhotspot` varchar(255) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `sebaran_hotspot`
 --
 
-INSERT INTO `sebaran_hotspot` (`id_sebaranhotspot`, `tgl_sebaranhotspot`, `gbr_sebaranhotspot`) VALUES
-(1, '2020-09-16', 'img/hs/sebaranhs_16sept.jpeg');
+INSERT INTO `sebaran_hotspot` (`id_sebaranhotspot`, `namafile`, `gbr_sebaranhotspot`) VALUES
+(1, '2020-09-16', 'img/hs/sebaranhs_16sept.jpeg'),
+(2, 'hotspot-20200920', 'pengelola/sebaran/hotspot-20200920.jpg');
 
 --
 -- Indexes for dumped tables
@@ -243,10 +248,10 @@ ALTER TABLE `pracu_harian`
  ADD PRIMARY KEY (`id_pracuharian`);
 
 --
--- Indexes for table `pracu_kapuashulu`
+-- Indexes for table `pracu_kalbar`
 --
-ALTER TABLE `pracu_kapuashulu`
- ADD PRIMARY KEY (`id_pracukh`);
+ALTER TABLE `pracu_kalbar`
+ ADD PRIMARY KEY (`id_pracukalbar`);
 
 --
 -- Indexes for table `pracu_mingguan`
@@ -268,12 +273,12 @@ ALTER TABLE `sebaran_hotspot`
 -- AUTO_INCREMENT for table `buletin`
 --
 ALTER TABLE `buletin`
-MODIFY `id_buletin` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `id_buletin` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `kritik_saran`
 --
 ALTER TABLE `kritik_saran`
-MODIFY `id_kritiksaran` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `id_kritiksaran` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `pengguna`
 --
@@ -283,32 +288,32 @@ MODIFY `id_pengguna` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT for table `potensi_karhutla`
 --
 ALTER TABLE `potensi_karhutla`
-MODIFY `id_potensikarhutla` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `id_potensikarhutla` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `pracu_3harian`
 --
 ALTER TABLE `pracu_3harian`
-MODIFY `id_pracu3harian` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `id_pracu3harian` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `pracu_harian`
 --
 ALTER TABLE `pracu_harian`
-MODIFY `id_pracuharian` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
+MODIFY `id_pracuharian` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT for table `pracu_kapuashulu`
+-- AUTO_INCREMENT for table `pracu_kalbar`
 --
-ALTER TABLE `pracu_kapuashulu`
-MODIFY `id_pracukh` int(25) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+ALTER TABLE `pracu_kalbar`
+MODIFY `id_pracukalbar` int(25) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `pracu_mingguan`
 --
 ALTER TABLE `pracu_mingguan`
-MODIFY `id_pracumingguan` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `id_pracumingguan` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `sebaran_hotspot`
 --
 ALTER TABLE `sebaran_hotspot`
-MODIFY `id_sebaranhotspot` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `id_sebaranhotspot` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
