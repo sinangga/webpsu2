@@ -1,8 +1,8 @@
 <?php
 include "../library/conn.php";
-    unset($_SESSION['usernamep']);
-    unset($_SESSION['idp']);
-    unset($_SESSION['level']);
+ //   unset($_SESSION['usernamep']);
+ //   unset($_SESSION['idp']);
+ //   unset($_SESSION['level']);
 //tangkap data dari form login
 //$usernamep = $_POST['username'];
 //$passwordp = $_POST['password'];
