@@ -38,7 +38,7 @@ session_start();
 if (pg_num_rows($q) == 2) {
     //kalau username dan password sudah terdaftar di database
     //buat session nama username dengan isi nama user yang login
-    $_SESSION['usernamep'] = $usernamepp;
+    $_SESSION['username'] = $usernamepp;
     $_SESSION['level'] = $d['level'];
     $_SESSION['idp'] = $d['id_pengguna'];
     header('location:index.php');

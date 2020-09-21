@@ -45,9 +45,6 @@ for ($i=0; $i<sizeof($xml->report); $i++) {
 			<div align="center" style="padding:20px">
 			<br>
 		<?php
-$url = "http://aviation.bmkg.go.id/latest/observation.x.xml.php";
-$sUrl = file_get_contents($url, True);
-$xml = simplexml_load_string($sUrl);
 for ($i=0; $i<sizeof($xml->report); $i++) {
     $report = $xml->report[$i];
     if(strtolower($report->icao_id) == "wiop") {
@@ -71,9 +68,9 @@ for ($i=0; $i<sizeof($xml->report); $i++) {
 					</div>
 						<div class="col-md-8 col-sm-8 col-xs-8">
 					<?php
-$url = "http://aviation.bmkg.go.id/latest/observation.x.xml.php";
-$sUrl = file_get_contents($url, True);
-$xml = simplexml_load_string($sUrl);
+//$url = "http://aviation.bmkg.go.id/latest/observation.x.xml.php";
+//$sUrl = file_get_contents($url, True);
+//$xml = simplexml_load_string($sUrl);
 for ($i=0; $i<sizeof($xml->report); $i++) {
     $report = $xml->report[$i];
     if(strtolower($report->icao_id) == "wiop") {
@@ -91,9 +88,9 @@ for ($i=0; $i<sizeof($xml->report); $i++) {
 					</div>
 					<div class="col-md-8 col-sm-8 col-xs-8">
 	<?php
-$url = "http://aviation.bmkg.go.id/latest/observation.x.xml.php";
-$sUrl = file_get_contents($url, True);
-$xml = simplexml_load_string($sUrl);
+//$url = "http://aviation.bmkg.go.id/latest/observation.x.xml.php";
+//$sUrl = file_get_contents($url, True);
+//$xml = simplexml_load_string($sUrl);
 for ($i=0; $i<sizeof($xml->report); $i++) {
     $report = $xml->report[$i];
     if(strtolower($report->icao_id) == "wiop") {				
@@ -115,9 +112,9 @@ for ($i=0; $i<sizeof($xml->report); $i++) {
 					</div>
 					<div class="col-md-8 col-sm-8 col-xs-8">
 		<?php
-$url = "http://aviation.bmkg.go.id/latest/observation.x.xml.php";
-$sUrl = file_get_contents($url, True);
-$xml = simplexml_load_string($sUrl);
+//$url = "http://aviation.bmkg.go.id/latest/observation.x.xml.php";
+//$sUrl = file_get_contents($url, True);
+//$xml = simplexml_load_string($sUrl);
 for ($i=0; $i<sizeof($xml->report); $i++) {
     $report = $xml->report[$i];
     if(strtolower($report->icao_id) == "wiop") {
@@ -135,9 +132,9 @@ for ($i=0; $i<sizeof($xml->report); $i++) {
 					</div>
 					<div class="col-md-8 col-sm-8 col-xs-8">
 		<?php
-$url = "http://aviation.bmkg.go.id/latest/observation.x.xml.php";
-$sUrl = file_get_contents($url, True);
-$xml = simplexml_load_string($sUrl);
+//$url = "http://aviation.bmkg.go.id/latest/observation.x.xml.php";
+//$sUrl = file_get_contents($url, True);
+//$xml = simplexml_load_string($sUrl);
 for ($i=0; $i<sizeof($xml->report); $i++) {
     $report = $xml->report[$i];
     if(strtolower($report->icao_id) == "wiop") {				
@@ -156,9 +153,9 @@ for ($i=0; $i<sizeof($xml->report); $i++) {
 				<div class="col-md-6 col-sm-12 col-xs-12" style="padding:5px; border-right:solid 10px #fff;">
 					<div class="col-md-4 col-sm-4 col-xs-4">
 <?php
-$url = "http://aviation.bmkg.go.id/latest/observation.x.xml.php";
-$sUrl = file_get_contents($url, True);
-$xml = simplexml_load_string($sUrl);
+//$url = "http://aviation.bmkg.go.id/latest/observation.x.xml.php";
+//$sUrl = file_get_contents($url, True);
+//$xml = simplexml_load_string($sUrl);
 for ($i=0; $i<sizeof($xml->report); $i++) {
     $report = $xml->report[$i];
     if(strtolower($report->icao_id) == "wiop") {
@@ -184,9 +181,9 @@ for ($i=0; $i<sizeof($xml->report); $i++) {
 					</div>
 					<div class="col-md-8 col-sm-8 col-xs-8" >
 <?php
-$url = "http://aviation.bmkg.go.id/latest/observation.x.xml.php";
-$sUrl = file_get_contents($url, True);
-$xml = simplexml_load_string($sUrl);
+//$url = "http://aviation.bmkg.go.id/latest/observation.x.xml.php";
+//$sUrl = file_get_contents($url, True);
+//$xml = simplexml_load_string($sUrl);
 for ($i=0; $i<sizeof($xml->report); $i++) {
     $report = $xml->report[$i];
     if(strtolower($report->icao_id) == "wiop") {
