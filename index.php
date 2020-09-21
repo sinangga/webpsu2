@@ -108,8 +108,8 @@ for ($i=0; $i<sizeof($xml->gempa); $i++) {
                                 <div class="thumb">
                                  <center><h3 >PRAKIRAAN CUACA KABUPATEN KAPUAS HULU </h3></center>
                                  <?php 
-                                 $query = mysqli_query($con,"SELECT * FROM pracu_harian ORDER BY id_pracuharian DESC LIMIT 1");
-                                 while($data = mysqli_fetch_array($query)) {
+                                 $query = pg_query($con,"SELECT * FROM pracu_harian ORDER BY id_pracuharian DESC LIMIT 1");
+                                 while($data = pg_fetch_array($query)) {
                                     echo("
                                  
                                  <img src='$data[gbr_pracuharian]'>
