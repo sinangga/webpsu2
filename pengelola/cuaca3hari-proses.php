@@ -4,7 +4,7 @@
   if(isset($_GET['hal'])=='delete'){
       $sql = "DELETE FROM pracu_3harian WHERE id_pracu3harian = '$_GET[id]'";
 
-    if (pg_query($sql,$con))
+    if (pg_query($sql,$conn))
       {echo "<script>alert('Data berhasil dihapus')
       window.location= 'data.php?page=cuaca3hari';</script>";}
       else {echo "<script>alert('Gagal menghapus data')
