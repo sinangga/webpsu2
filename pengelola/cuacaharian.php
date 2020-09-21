@@ -35,7 +35,7 @@
                                     <td align='center'>$data[namafile]</td>  
                                     <td align='center'>$data[gbr_pracuharian]</td> 
                                     <td align='center'>
-                                    <a href='lapsuhu-proses.php?hal=delete&id=$data[id_pracuharian]' onclick='return confirm(\"Apakah anda yakin akan menghapus data ini?\")'> 
+                                    <a href='cuacaharian-proses.php?hal=delete&id=$data[id_pracuharian]' onclick='return confirm(\"Apakah anda yakin akan menghapus data ini?\")'> 
                                     <i class='fa fa-trash-o fa-lg'></i>
                                         </a>
                                     </td>
@@ -94,7 +94,7 @@
              //move_uploaded_file($file_tmp, $lokasi);
             move_uploaded_file($file_tmp, $lokasi2);
           rename($lokasi2,$lokasi);
-            $in = pg_query($conn, "INSERT INTO pracu_harian (id_pracuharian, namafile, gbr_pracuharian)
+            $in = pg_query("INSERT INTO pracu_harian (id_pracuharian, namafile, gbr_pracuharian)
       VALUES (NULL, '$namagbr', '$lokasifile')");
             if($in){
               echo "<script>alert('File berhasil diupload!')
@@ -123,7 +123,7 @@
                   <label>Upload Data</label>
                   <input type="file" name="file">
 
-                  <p class="help-block">Besar file (file size) maksimal hanya 3 MB</p>
+                  <p class="help-block">Besar file (file size) maksimal hanya 1 MB</p>
                 </div>
               </div>
               </div>

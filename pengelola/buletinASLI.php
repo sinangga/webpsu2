@@ -2,7 +2,7 @@
 ?>
     <section class="content-header">
       <h1>
-        Data Prakiraan Cuaca Seminggu <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-data"><i class="fa fa-file-o"></i> Tambah</button>
+        Data Buletin <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-data"><i class="fa fa-file-o"></i> Cover</button> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-pdf"><i class="fa fa-file-o"></i> PDF </button>
       </h1>
     </section> 
     <!-- Main content -->
@@ -15,25 +15,27 @@
               <table id="example2" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>No</th>
-                  <th>Nama File</th>
-                  <th>Link Gambar</th>
-                   <th>Hapus</th>
+                  <th><center>No</center></th>
+                  <th><center>Bulan</center></th>
+                  <th><center>Link Gambar</center></th>
+                  <th><center>Link File</center></th>
+                  <th><center>Hapus</center></th>
                 </tr>
                 </thead>
                 <tbody>
                 <?php 
                   $i = 1;
-                    $query = pg_query("SELECT * FROM pracu_mingguan ");
+                    $query = mysql_query("SELECT * FROM buletin");
                       // tampilkan data permukaan selama masih ada
-                      while($data = pg_fetch_array($query)) {
+                      while($data = mysql_fetch_array($query)) {
                       echo("
                       <tr class='odd gradeA'>
                       <td align='center'>$i</td>
-                                    <td align='center'>$data[namafile]</td> 
-                                    <td align='center'>$data[gbr_pracumingguan]</td> 
+                                    <td align='center'>$data[bln_buletin]</td> 
+                                    <td align='center'>$data[gbr_buletin]</td> 
+                                    <td align='center'>$data[file_buletin]</td>
                                     <td align='center'>
-                                    <a href='cuacaseminggu-proses.php?hal=delete&id=$data[id_pracumingguan]' onclick='return confirm(\"Apakah anda yakin akan menghapus data ini?\")'> 
+                                    <a href='lapsuhu-proses.php?hal=delete&id=$data[id_buletin]' onclick='return confirm(\"Apakah anda yakin akan menghapus data ini?\")'> 
                                     <i class='fa fa-trash-o fa-lg'></i>
                                         </a>
                                     </td>
@@ -56,7 +58,7 @@
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-                  <h3 class="modal-title">PRAKIRAAN CUACA 1 MINGGU</h3>
+                  <h3 class="modal-title">COVER BULETIN</h3>
               </div>
               <div class="modal-body">
               <form role="form" action="" method="POST" enctype="multipart/form-data">
@@ -64,13 +66,7 @@
                 <div class="form-group">
                   
             <?php
-            $kar = "mingguan-";
-            $tglupload  = date("Y-m-d");
-            $tahun=substr($tglupload, 0, 4);
-            $bulan=substr($tglupload, 5, 2);
-            $tgll=substr($tglupload, 8, 2);
-            $namagbr = $kar .$tahun .$bulan .$tgll;
-
+            
   include "../library/config.php";
 
   if(isset($_POST['upload'])){
@@ -80,42 +76,44 @@
         $file_ext   = strtolower(end($xyz));
         $file_size    = $_FILES['file']['size'];
         $file_tmp   = $_FILES['file']['tmp_name'];
-        $char = "pengelola/pracumingguan/mingguan-";
-
-        $namafile = $char .$tahun .$bulan .$tgll;
+        $char = "pengelola/coverbltn/buletin-";
+        $kar = "buletin-";
+        $bulan = $_POST['bulan'];
+        $namagbr = $kar .$bulan;
+        $namafile = $char .$bulan;
         $lokasifile = $namafile.'.'.$file_ext;
 
         if(in_array($file_ext, $allowed_ext) === true){
           if($file_size < 1044070){
-            $lokasi = 'pracumingguan/'.$namagbr.'.'.$file_ext;
+            $lokasi = 'coverbltn/'.$namagbr.'.'.$file_ext;
              //move_uploaded_file($file_tmp, $lokasi);
-            $lokasi2 = 'pracumingguan/'.basename($_FILES['file']['name']);
+            $lokasi2 = 'coverbltn/'.basename($_FILES['file']['name']);
             move_uploaded_file($file_tmp, $lokasi2);
             // $asal='data_kirim/'.$lokasi2;
             rename($lokasi2,$lokasi);
-            $in = pg_query("INSERT INTO pracu_mingguan (id_pracumingguan, namafile, gbr_pracumingguan)
-      VALUES (NULL, '$namagbr', '$lokasifile')");
+           $in = mysql_query("INSERT INTO buletin (id_buletin, bln_buletin, gbr_buletin, file_buletin)
+      VALUES (NULL,'$bulan','$lokasifile', 'NULL')");
             if($in){
               echo "<script>alert('File berhasil diupload!')
-                window.location= 'data.php?page=cuacaseminggu';</script>";
+                window.location= 'data.php?page=buletin';</script>";
             }else{
               echo 
               "<script>alert('ERROR: Gagal upload file!')
-                window.location= 'data.php?page=cuacaseminggu';</script>";
+                window.location= 'data.php?page=buletin';</script>";
             }
           }else{
             echo "<script>alert('ERROR: Besar ukuran file (file size) maksimal 1 Mb!')
-                window.location= 'data.php?page=cuacaseminggu';</script>";
+                window.location= 'data.php?page=buletin';</script>";
           }
         }else{
           echo "<script>alert('ERROR: Ekstensi file tidak di izinkan!')
-                window.location= 'data.php?page=cuacaseminggu';</script>";
+                window.location= 'data.php?page=buletin';</script>";
         }
       }
       ?>
-                  <label>Nama File</label>
-                   <input class="form-control" value="<?php echo $namagbr ?>"  disabled="disabled"name="namafile"> </input>
-                  
+                  <label>Bulan</label>
+                  <input class="form-control" name="bulan"></input>
+   
                 </div>
                 <div class="form-group">
                   <label>Upload Data</label>
@@ -135,6 +133,41 @@
           </div>
           <!-- /.modal-dialog -->
         </div>
-        <!-- /.modal -->      
+        <!-- /.modal -->    
 
+ <div class="modal fade" id="modal-pdf">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span></button>
+              <h3 class="modal-title">FILE BULETIN</h3>
+          </div>
+  <div class="modal-body">
+      <form role="form" method="POST" action="buletin-proses.php">
+        <div class="box-body"> 
+            <div class="form-group">
+              <label>Bulan</label>
+                  <input class="form-control" value="<?php echo $data['bln_buletin']; ?> "  name="bulan"></input>
+   
+                </div>
+                <div class="form-group">
+                  <label>Upload Data</label>
+                  <input type="file" name="file">
 
+                  <p class="help-block">Besar file (file size) maksimal hanya 1 MB</p>
+                </div>
+            </div>
+          </div>
+
+  <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
+      <button type="submit" class="btn btn-primary" name="save">Kirim</button>
+      </form>  
+  </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->  

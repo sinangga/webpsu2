@@ -16,7 +16,7 @@
                 <thead>
                 <tr>
                   <th>No</th>
-                  <th>Tanggal</th>
+                  <th>Nama File</th>
                   <th>Link Gambar</th>
                   <th>Hapus</th>
                 </tr>
@@ -30,10 +30,10 @@
                       echo("
                       <tr class='odd gradeA'>
                       <td align='center'>$i</td>
-                                    <td align='center'>$data[tgl_pracu3harian]</td> 
+                                    <td align='center'>$data[namafile]</td> 
                                     <td align='center'>$data[gbr_pracu3harian]</td> 
                                     <td align='center'>
-                                    <a href='lapsuhu-proses.php?hal=delete&id=$data[id_pracu3harian]' onclick='return confirm(\"Apakah anda yakin akan menghapus data ini?\")'> 
+                                    <a href='cuaca3hari-proses.php?hal=delete&id=$data[id_pracu3harian]' onclick='return confirm(\"Apakah anda yakin akan menghapus data ini?\")'> 
                                     <i class='fa fa-trash-o fa-lg'></i>
                                         </a>
                                     </td>
@@ -62,43 +62,37 @@
               <form role="form" action="" method="POST" enctype="multipart/form-data">
               <div class="box-body">
                 <div class="form-group">
-                  <h4 class="box-title"><b>UPLOAD DATA</b>
-                  <?php
-                  date_default_timezone_set('Asia/Jakarta');
-                  echo "<div class='pull-right'>Tanggal : ".date("d-m-Y")."</div>";
-                  ?>
-            </h4>
-            <hr>
+                  
             <?php
-  include "../library/config.php";
+            $kar = "3harian-";
+            $tglupload  = date("Y-m-d");
+            $tahun=substr($tglupload, 0, 4);
+            $bulan=substr($tglupload, 5, 2);
+            $tgll=substr($tglupload, 8, 2);
+            $namagbr = $kar .$tahun .$bulan .$tgll;
+            include "../library/config.php";
 
   if(isset($_POST['upload'])){
-        $allowed_ext  = array('doc', 'docx', 'xls', 'png', 'jpg', 'jpeg', 'pdf', 'rar', 'zip');
+        $allowed_ext  = array('png', 'jpg', 'jpeg');
         $file_name    = $_FILES['file']['name'];
         $xyz = explode('.', $file_name);
         $file_ext   = strtolower(end($xyz));
         $file_size    = $_FILES['file']['size'];
         $file_tmp   = $_FILES['file']['tmp_name'];
-        $tglkirim  = date("Y-m-d");
-        $char = "kr-";
-        $tahun=substr($tglkirim, 0, 4);
-        $bulan=substr($tglkirim, 5, 2);
-        $tgll=substr($tglkirim, 8, 2);
-        $email = $_POST['email'];
-        $nama = $char .$tahun .$bulan .$tgll.'-'.$id_masuk.'-'.$email;
-        $keterangan = "data terkirim";
-        $catatan = $_POST['catatan'];
-        $datakirim = $nama.'.'.$file_ext;
+        $char = "pengelola/pracu3hari/3harian-";
+        $namafile = $char .$tahun .$bulan .$tgll;
+        $lokasifile = $namafile.'.'.$file_ext;
 
         if(in_array($file_ext, $allowed_ext) === true){
-          if($file_size < 3044070){
-            $lokasi = 'data_kirim/'.$nama.'.'.$file_ext;
+          if($file_size < 1044070){
+            $lokasi = 'pracu3hari/'.$namagbr.'.'.$file_ext;
              //move_uploaded_file($file_tmp, $lokasi);
-            $lokasi2 = 'data_kirim/'.basename($_FILES['file']['name']);
+            $lokasi2 = 'pracu3hari/'.basename($_FILES['file']['name']);
             move_uploaded_file($file_tmp, $lokasi2);
             // $asal='data_kirim/'.$lokasi2;
             rename($lokasi2,$lokasi);
-            $in = pg_query("UPDATE data_masuk SET keterangan = '$keterangan', data_kirim = '$datakirim', tgl_kirim = '$tglkirim', catatan = '$catatan'  WHERE id_masuk = '$id_masuk'");
+             $in = pg_query("INSERT INTO pracu_3harian (id_pracu3harian, namafile, gbr_pracu3harian)
+      VALUES (NULL, '$namagbr', '$lokasifile')");
             if($in){
               echo "<script>alert('File berhasil diupload!')
                 window.location= 'data.php?page=cuaca3hari';</script>";
@@ -118,7 +112,7 @@
       }
       ?>
                   <label>Nama File</label>
-                  <input class="form-control" value="<?php echo $data['instansi']; ?> "  name="instansi"></input>
+              <input class="form-control" value="<?php echo $namagbr ?>"  disabled="disabled"name="namafile"> </input>
                   <input class="hidden" value="<?php echo $data['email']; ?> "  name="email"></input>
 
                 </div>
