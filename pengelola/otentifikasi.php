@@ -35,7 +35,7 @@ $d = pg_fetch_assoc($q);
  
 session_start();
 
-if (pg_num_rows($q) == 2) {
+if (pg_num_rows($q) == 1) {
     //kalau username dan password sudah terdaftar di database
     //buat session nama username dengan isi nama user yang login
     $_SESSION['username'] = $usernamepp;
