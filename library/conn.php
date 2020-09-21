@@ -1,3 +1,3 @@
 <?php
-$conn = pg_connect("postgres://gyijtpgdiqgflk:abfaba667ed390fa61f48279eafa02fb2ac42116f195a59b5760fc5dfefdd785@ec2-52-1-95-247.compute-1.amazonaws.com:5432/dlssksa0as526");
+$conn = pg_connect("postgres://ytultdmxidbpxi:c81264794a4aada785cd76a0374a0b08dec48ec249815f97d36cb85277e5f04d@ec2-52-201-55-4.compute-1.amazonaws.com:5432/d7rlg3jh6fiqes");
 ?>
