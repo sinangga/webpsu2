@@ -90,8 +90,8 @@ include "../library/conn.php";
 
         if(in_array($file_ext, $allowed_ext) === true){
           if($file_size < 1044070){
-            $lokasi = 'pracuharian/'.$namagbr.'.'.$file_ext;
-            $lokasi2 = 'pracuharian/'.basename($_FILES['file']['name']);
+            $lokasi = '/pracuharian/'.$namagbr.'.'.$file_ext;
+            $lokasi2 = '/pracuharian/'.basename($_FILES['file']['name']);
              //move_uploaded_file($file_tmp, $lokasi);
             move_uploaded_file($file_tmp, $lokasi2);
             rename($lokasi2,$lokasi);
