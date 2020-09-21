@@ -2,7 +2,7 @@
   include "../library/conn.php";
    
   if(isset($_GET['hal'])=='delete'){
-      $sql = "DELETE FROM pracu_harian WHERE id_pracuharian = '$_GET[id]'";
+      $sql = "DELETE FROM pracu_harian WHERE id_pracuharian = $_GET[id]";
 
     if (pg_query($sql))
       {echo "<script>alert('Data berhasil dihapus')
