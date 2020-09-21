@@ -72,7 +72,7 @@ include "../library/conn.php";
             $bulan=substr($tglupload, 5, 2);
             $tgll=substr($tglupload, 8, 2);
             $namagbr = $kar .$tahun .$bulan .$tgll;
-			$bultan = .$bulan .$tgll;
+			$bultan = $bulan .$tgll;
 
 
   include "../library/config.php";
