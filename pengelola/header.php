@@ -112,8 +112,8 @@ desired effect
               <span class="hidden-xs">
               <?php $idPengelola = $_SESSION['idp'];
               $lvl = $_SESSION['level'];
-              $sql2 = mysql_query("SELECT * FROM pengguna WHERE id_pengguna ='$idPengelola'");
-                $d2 = mysql_fetch_array($sql2);
+              $sql2 = pg_query("SELECT * FROM pengguna WHERE id_pengguna ='$idPengelola'");
+                $d2 = pg_fetch_array($sql2);
                 $namaPengelola = $d2['nama_pengguna'];
                  ?>
                <?php echo $namaPengelola; ?>
